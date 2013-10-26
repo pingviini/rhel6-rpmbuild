@@ -1,4 +1,3 @@
-============
 Introduction
 ============
 
@@ -41,18 +40,17 @@ I included an vagrant setup for building CentOS 6.4 box for testing & creating
 RPMS.
 
 Setup your build environment
-============================
+----------------------------
 
 You will need following:
 
 1. CentOS/RHEL 6.x box or Vagrant (there is an vagrant setup included).
-2. RPM build tools::
-
+2. RPM build tools:
     $ sudo yum groupinstall "Development Tools"
     $ sudo yum install kernel-devel rpmdevtools rpmlint rpm-build
 3. BuildRequirements for each package. Commands to install package-specific
    requirements are listed below.
 
 Building an RPM
-===============
+---------------
 
