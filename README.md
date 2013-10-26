@@ -44,13 +44,33 @@ Setup your build environment
 
 You will need following:
 
-1. CentOS/RHEL 6.x box or Vagrant (there is an vagrant setup included).
+1. CentOS/RHEL 6.x box or [Vagrant](http://www.vagrantup.com) (there is an vagrant setup included).
 2. RPM build tools:
     $ sudo yum groupinstall "Development Tools"
     $ sudo yum install kernel-devel rpmdevtools rpmlint rpm-build
 3. BuildRequirements for each package. Commands to install package-specific
    requirements are listed below.
+4. Clone this repo.
+5. rpmbuild -bb <specfile.spec>
 
-Building an RPM
----------------
+Package requirements
+--------------------
+
+Python 2.4.6 & 2.7.5:
+    $ sudo yum install autoconf bzip2 bzip2-devel db4-devel expat-devel findutils gcc-c++ glibc-devel make openssl-devel pkgconfig readline-devel sqlite-devel tar zlib-devel
+
+Git 1.8.4.1:
+    $ sudo yum install zlib-devel openssl-devel curl-devel expat-devel gettext xmlto asciidoc perl-Error perl-ExtUtils-MakeMaker
+
+Mercurial 2.7.2:
+    $ sudo yum install python python-devel
+
+Supervisor 3.0:
+    $ sudo yum install python python-devel python-meld3 python-setuptools
+
+Setuptools 1.1.6:
+    $ sudo yum install python python-devel
+
+plone-virtualenvs:
+    $ sudo yum install python27 python27-devel libxslt-devel libxml2-devel openldap-devel libpng-devel libjpeg-turbo-devel zlib-devel freetype-devel openssl-devel
 
