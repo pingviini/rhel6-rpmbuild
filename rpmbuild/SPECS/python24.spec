@@ -2,7 +2,7 @@
 %define pybasever 2.4
 %define version 2.4.6
 %define name python
-%define release 1.JYU
+%define release 1
 %define _prefix /usr/local/python24
 
 Name: %{name}%{binsuffix}
