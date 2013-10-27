@@ -57,7 +57,8 @@ Below command will install required packages for building python 2.4/2.7 rpms:
 Resulting rpm is tailored serving web apps and won't include support for
 ncurses, tk and few more libs. If you need support for eg. ncurses you can
 modify the 'configure' commands parameters and install required development
-packages.
+packages. RPMs will install python under /usr/local/python<24/27>. If you want
+to use different prefix, just modify spec-files configure-command.
 
 To build python rpms go under SPECS-folder and run:
 
@@ -78,16 +79,29 @@ If you don't need git docs you can run:
 ### Mercurial 2.7.2:
 
     $ sudo yum install python python-devel
+    $ rpmbuild -bb mercurial.spec
 
 ### Supervisor 3.0:
 
     $ sudo yum install python python-devel python-meld3 python-setuptools
+    $ rpmbuild -bb supervisor.spec
 
 ### Setuptools 1.1.6:
 
     $ sudo yum install python python-devel
+    $ rpmbuild -bb setuptools.spec
 
 ### plone-virtualenvs:
 
-    $ sudo yum install python27 python27-devel libxslt-devel libxml2-devel openldap-devel libpng-devel libjpeg-turbo-devel zlib-devel freetype-devel openssl-devel
+Building plone43-virtualenv assumes you have already built and installed
+python2.7. Same goes to plone3-virtualenv - you should have built and installed
+python24. Virtualenvs will be installed under /usr/local/virtualenvs/plone<xx>.
+If you want to use another location, feel free to modify spec-file.
 
+    $ sudo yum install python27 python27-devel python24 python24-devel
+    libxslt-devel libxml2-devel openldap-devel libpng-devel libjpeg-turbo-devel
+    zlib-devel freetype-devel openssl-devel python-virtualenv $ rpmbuild -bb
+    plone3-virtualenv plone40-virtualenv plone41-virtualenv plone42-virtualenv
+    plone43-virtualenv
+    $ rpmbuild -bb plone43-virtualenv plone42-virtualenv plone41-virtualenv
+    plone40-virtualenv plone3-virtualenv
