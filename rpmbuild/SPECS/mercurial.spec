@@ -1,4 +1,4 @@
-%define _topdir %(ehco `cd ..; pwd`)/
+%define _topdir %(echo `cd ..; pwd`)/
 %define name mercurial
 %define version 2.7.2
 %define unmangled_version 2.7.2
