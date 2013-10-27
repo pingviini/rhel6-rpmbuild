@@ -10,30 +10,20 @@ for RHEL/CentOS 6.x:
 * python-setuptools 1.1.6
 * supervisor 3.0
 * plone43-virtualenv
-  * Uses Python 2.7.5
-  * lxml 2.7.2
-  * Pillow 2.2.1
-  * python-ldap x.x
+  * Python 2.7.5
+  * lxml, Pillow, python-ldap & pip
 * plone42-virtualenv
   * System Python (2.6.x)
-  * lxml 2.7.2
-  * Pillow 2.2.1
-  * python-ldap x.x
+  * lxml, Pillow, python-ldap & pip
 * plone41-virtualenv
   * System Python (2.6.x)
-  * lxml 2.7.2
-  * Pillow 2.2.1
-  * python-ldap x.x
+  * lxml, Pillow, python-ldap & pip
 * plone40-virtualenv
   * System Python (2.6.x)
-  * lxml 2.7.2
-  * Pillow 1.7.8
-  * python-ldap x.x
+  * lxml, Pillow, python-ldap & pip
 * plone3-virtualenv
   * Python 2.4.6
-  * lxml 2.7.2
-  * Pillow 1.7.8
-  * python-ldap x.x
+  * lxml, Pillow (1.7.8), python-ldap & pip
 
 I included an vagrant setup for building CentOS 6.4 box for testing & creating
 RPMS.
@@ -48,7 +38,7 @@ You will need following:
         $ sudo yum groupinstall "Development Tools"
         $ sudo yum install kernel-devel rpmdevtools rpmlint rpm-build
 3. BuildRequirements for each package. Commands to install package-specific
-   requirements are listed below.
+   requirements are listed below in the package specific instructions.
 4. Clone this repo.
 5. Build rpms:
 
@@ -58,11 +48,32 @@ You will need following:
 
 ### Python 2.4.6 & 2.7.5:
 
-    $ sudo yum install autoconf bzip2 bzip2-devel db4-devel expat-devel findutils gcc-c++ glibc-devel make openssl-devel pkgconfig readline-devel sqlite-devel tar zlib-devel
+Below command will install required packages for building python 2.4/2.7 rpms:
+
+    $ sudo yum install autoconf bzip2 bzip2-devel db4-devel expat-devel
+    findutils gcc-c++ glibc-devel make openssl-devel pkgconfig readline-devel
+    sqlite-devel tar zlib-devel
+
+Resulting rpm is tailored serving web apps and won't include support for
+ncurses, tk and few more libs. If you need support for eg. ncurses you can
+modify the 'configure' commands parameters and install required development
+packages.
+
+To build python rpms go under SPECS-folder and run:
+
+    $ rpmbuild -bb python24.spec python27.spec
+
 
 ### Git 1.8.4.1:
 
-    $ sudo yum install zlib-devel openssl-devel curl-devel expat-devel gettext xmlto asciidoc perl-Error perl-ExtUtils-MakeMaker
+    $ sudo yum install zlib-devel openssl-devel curl-devel expat-devel gettext
+    xmlto asciidoc perl-Error perl-ExtUtils-MakeMaker
+    $ rpmbuild -bb git.spec
+
+If you don't need git docs you can run:
+
+    $ rpmbuild -bb git.spec --without docs
+
 
 ### Mercurial 2.7.2:
 
