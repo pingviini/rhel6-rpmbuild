@@ -3,6 +3,7 @@ class rpmbuilder {
   package {[
     "autoconf",
     "automake",
+    "asciidoc",
     "binutils",
     "bison",
     "byacc",
@@ -58,6 +59,7 @@ class rpmbuilder {
     "unzip",
     "vim-enhanced",
     "wget",
+    "xmlto",
     "zip",
     "zlib-devel"]:
   ensure => "installed",
