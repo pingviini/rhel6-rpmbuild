@@ -34,8 +34,8 @@ python setup.py install --single-version-externally-managed -O1 --root=$RPM_BUIL
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES
-
+%files
+%defattr(-,root,root)
 /usr/bin/echo_supervisord_conf
 /usr/bin/pidproxy
 /usr/bin/supervisorctl
@@ -44,7 +44,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/python2.6/site-packages/supervisor-3.0-py2.6.egg-info
 /usr/lib/python2.6/site-packages/supervisor
 
-%defattr(-,root,root)
 
 %changelog
 * Sat Oct 26 2013 Jukka Ojaniemi <jukka.ojaniemi@gmail.com> - 3.0-1
