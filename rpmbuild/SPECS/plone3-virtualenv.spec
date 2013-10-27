@@ -1,9 +1,9 @@
-%define python_minver 	2.4.6
-
-%define shortname	plone3
-%define name		%{shortname}-virtualenv
-%define libname     	%{name}
-%define version		1.0
+%define _topdir %(echo `cd ..; pwd`)/
+%define python_minver 2.4.6
+%define shortname plone3
+%define name %{shortname}-virtualenv
+%define libname %{name}
+%define version 1.0
 
 Summary: Virtualenv for Plone 3 instances.
 Name: %{name}

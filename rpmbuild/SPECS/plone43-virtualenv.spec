@@ -1,5 +1,5 @@
-%define _topdir %(ehco `cd ..; pwd`)/
-%define python_minver   2.7.5
+%define _topdir %(echo `cd ..; pwd`)/
+%define python_minver 2.7.5
 %define shortname plone43
 %define name %{shortname}-virtualenv
 %define libname %{name}
