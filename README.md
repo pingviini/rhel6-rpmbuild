@@ -47,12 +47,12 @@ You will need following:
 
     $ sudo yum groupinstall "Development Tools"
     $ sudo yum install kernel-devel rpmdevtools rpmlint rpm-build
+
 3. BuildRequirements for each package. Commands to install package-specific
    requirements are listed below.
 4. Clone this repo.
-5. rpmbuild -bb <specfile.spec>
 
-## Package requirements
+## Package build requirements
 
 ### Python 2.4.6 & 2.7.5:
 
