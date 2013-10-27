@@ -1,5 +1,5 @@
 class { "epel": }
-class { "rpmbuilder":
+class rpmbuilder {
   package {[
     "autoconf",
     "automake",
@@ -64,3 +64,5 @@ class { "rpmbuilder":
   require => Class["epel"]
   }
 }
+
+class { "rpmbuilder": }
