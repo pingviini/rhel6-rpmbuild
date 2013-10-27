@@ -7,9 +7,18 @@ https://pypi.python.org/packages/source/s/setuptools/setuptools-1.1.6.tar.gz
 https://pypi.python.org/packages/source/s/supervisor/supervisor-3.0.tar.gz
 http://git-core.googlecode.com/files/git-1.8.4.1.tar.gz"
 
-if [ ! -d "SOURCES" ]; then
-    mkdir SOURCES
-fi
+rpmtree="SOURCES
+BUILD
+BUILDROOT
+RPMS
+SRPMS"
+
+for folder in $rpmtree
+do
+    if [ ! -d $folder ]; then
+        mkdir $folder
+    fi
+done
 
 for path in $paths
 do
