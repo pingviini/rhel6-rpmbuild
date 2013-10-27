@@ -1,10 +1,9 @@
-%define python_minver 	2.7.5
-
-%define shortname	plone43
-%define name		%{shortname}-virtualenv
-%define libname     	%{name}
-%define version		1.0
-
+%define _topdir %(ehco `cd ..; pwd`)/
+%define python_minver   2.7.5
+%define shortname plone43
+%define name %{shortname}-virtualenv
+%define libname %{name}
+%define version 1.0
 
 Summary: Virtualenv for Plone 4.3 instances.
 Name: %{name}

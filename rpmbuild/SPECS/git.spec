@@ -1,21 +1,22 @@
 # Pass --without docs to rpmbuild if you don't want the documentation
 
-Name: 		git
-Version: 	1.8.4.1
-Release: 	1
-Summary:  	Core git tools
-License: 	GPL
-Group: 		Development/Tools
-URL: 		http://kernel.org/pub/software/scm/git/
-Source: 	http://kernel.org/pub/software/scm/git/%{name}-%{version}.tar.gz
-BuildRequires:	zlib-devel >= 1.2, openssl-devel, curl-devel, expat-devel, gettext  %{!?_without_docs:, xmlto, asciidoc > 6.0.3}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+%define     _topdir %(ehco `cd ..; pwd`)/
+Name:       git
+Version:    1.8.4.1
+Release:    1
+Summary:    Core git tools
+License:    GPL
+Group:      Development/Tools
+URL:        http://kernel.org/pub/software/scm/git/
+Source:     http://kernel.org/pub/software/scm/git/%{name}-%{version}.tar.gz
+BuildRequires:  zlib-devel >= 1.2, openssl-devel, curl-devel, expat-devel, gettext  %{!?_without_docs:, xmlto, asciidoc > 6.0.3}
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-Requires:	perl-Git = %{version}-%{release}
-Requires:	zlib >= 1.2, rsync, less, openssh-clients, expat
-Provides:	git-core = %{version}-%{release}
-Obsoletes:	git-core <= 1.5.4.2
-Obsoletes:	git-p4
+Requires:   perl-Git = %{version}-%{release}
+Requires:   zlib >= 1.2, rsync, less, openssh-clients, expat
+Provides:   git-core = %{version}-%{release}
+Obsoletes:  git-core <= 1.5.4.2
+Obsoletes:  git-p4
 
 %description
 Git is a fast, scalable, distributed revision control system with an
@@ -27,17 +28,17 @@ install all git packages, including tools for integrating with other
 SCMs, install the git-all meta-package.
 
 %package all
-Summary:	Meta-package to pull in all git tools
-Group:		Development/Tools
-Requires:	git = %{version}-%{release}
-Requires:	git-svn = %{version}-%{release}
-Requires:	git-cvs = %{version}-%{release}
-Requires:	git-arch = %{version}-%{release}
-Requires:	git-email = %{version}-%{release}
-Requires:	gitk = %{version}-%{release}
-Requires:	gitweb = %{version}-%{release}
-Requires:	git-gui = %{version}-%{release}
-Obsoletes:	git <= 1.5.4.2
+Summary:    Meta-package to pull in all git tools
+Group:      Development/Tools
+Requires:   git = %{version}-%{release}
+Requires:   git-svn = %{version}-%{release}
+Requires:   git-cvs = %{version}-%{release}
+Requires:   git-arch = %{version}-%{release}
+Requires:   git-email = %{version}-%{release}
+Requires:   gitk = %{version}-%{release}
+Requires:   gitweb = %{version}-%{release}
+Requires:   git-gui = %{version}-%{release}
+Obsoletes:  git <= 1.5.4.2
 
 %description all
 Git is a fast, scalable, distributed revision control system with an
@@ -70,7 +71,7 @@ Git tools for importing Arch repositories.
 %package email
 Summary:        Git tools for sending email
 Group:          Development/Tools
-Requires:	git = %{version}-%{release}
+Requires:   git = %{version}-%{release}
 %description email
 Git tools for sending email.
 
@@ -89,7 +90,7 @@ Requires:       git = %{version}-%{release}, tk >= 8.4
 Git revision tree visualiser ('gitk')
 
 %package -n gitweb
-Summary:	Git web interface
+Summary:    Git web interface
 Group:          Development/Tools
 Requires:       git = %{version}-%{release}
 %description -n gitweb
