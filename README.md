@@ -44,13 +44,13 @@ You will need following:
 
 1. CentOS/RHEL 6.x box or [Vagrant](http://www.vagrantup.com) (there is an vagrant setup included).
 2. RPM build tools:
-
-    $ sudo yum groupinstall "Development Tools"
-    $ sudo yum install kernel-devel rpmdevtools rpmlint rpm-build
-
+        $ sudo yum groupinstall "Development Tools"
+        $ sudo yum install kernel-devel rpmdevtools rpmlint rpm-build
 3. BuildRequirements for each package. Commands to install package-specific
    requirements are listed below.
 4. Clone this repo.
+5. Build rpms:
+        $ rpmbuild -bb <specfile>.spec
 
 ## Package build requirements
 
