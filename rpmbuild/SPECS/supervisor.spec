@@ -34,6 +34,15 @@ python setup.py install --single-version-externally-managed -O1 --root=$RPM_BUIL
 rm -rf $RPM_BUILD_ROOT
 
 %files -f INSTALLED_FILES
+
+/usr/bin/echo_supervisord_conf
+/usr/bin/pidproxy
+/usr/bin/supervisorctl
+/usr/bin/supervisord
+/usr/lib/python2.6/site-packages/supervisor-3.0-py2.6-nspkg.pth
+/usr/lib/python2.6/site-packages/supervisor-3.0-py2.6.egg-info
+/usr/lib/python2.6/site-packages/supervisor
+
 %defattr(-,root,root)
 
 %changelog
