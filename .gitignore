@@ -3,3 +3,4 @@
 *.zip
 *.egg
 *.rpm
+vagrant/.vagrant
