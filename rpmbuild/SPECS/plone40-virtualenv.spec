@@ -1,4 +1,4 @@
-%define _topdir %(echo `cd ..; pwd`)/
+%define _topdir %(echo `cd ..; pwd`)
 %define python_minver 2.6.6
 %define shortname plone40
 %define name %{shortname}-virtualenv

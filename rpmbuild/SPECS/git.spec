@@ -1,6 +1,6 @@
 # Pass --without docs to rpmbuild if you don't want the documentation
 
-%define     _topdir %(echo `cd ..; pwd`)/
+%define     _topdir %(echo `cd ..; pwd`)
 Name:       git
 Version:    1.8.4.1
 Release:    1

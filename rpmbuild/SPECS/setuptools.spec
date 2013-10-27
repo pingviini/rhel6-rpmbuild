@@ -1,4 +1,4 @@
-%define _topdir %(cd ..; pwd)/
+%define _topdir %(cd ..; pwd)
 %define name python-setuptools
 %define packagename setuptools
 %define version 1.1.6

@@ -1,4 +1,4 @@
-%define _topdir %(echo `cd ..; pwd`)/
+%define _topdir %(echo `cd ..; pwd`)
 %define binsuffix 24
 %define pybasever 2.4
 %define version 2.4.6

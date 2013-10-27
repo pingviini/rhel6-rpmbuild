@@ -1,4 +1,4 @@
-%define _topdir %(cd ..; pwd)/
+%define _topdir %(cd ..; pwd)
 %define name supervisor
 %define version 3.0
 %define unmangled_version 3.0
